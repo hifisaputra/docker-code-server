@@ -41,11 +41,6 @@ RUN \
     /var/lib/apt/lists/* \
     /var/tmp/*
 
-SHELL ["/bin/bash", "-c"]
-RUN touch ~/.bashrc && chmod +x ~/.bashrc
-RUN curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh | bash
-RUN . ~/.nvm/nvm.sh && source ~/.bashrc && nvm install --lts
-
 # add local files
 COPY /root /
 
