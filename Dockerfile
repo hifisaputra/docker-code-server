@@ -44,9 +44,7 @@ RUN \
 SHELL ["/bin/bash", "-c"]
 RUN touch ~/.bashrc && chmod +x ~/.bashrc
 RUN curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh | bash
-RUN . ~/.nvm/nvm.sh && source ~/.bashrc && nvm install node
-
-RUN wget -qO- https://get.pnpm.io/install.sh | ENV="$HOME/.bashrc" SHELL="$(which bash)" bash -
+RUN . ~/.nvm/nvm.sh && source ~/.bashrc && nvm install --lts
 
 # add local files
 COPY /root /
